@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CanScript : MonoBehaviour
+public class CanCatcher : MonoBehaviour
 {
     public GameObject scoreText;
+    public ParticleSystem CannonParticles;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +14,13 @@ public class CanScript : MonoBehaviour
             Destroy(other.gameObject);
             scoreText.GetComponent<ScoreKeeperCans>().scoreValue += 5;
             scoreText.GetComponent<ScoreKeeperCans>().UpdateScore();
+
+            CannonParticles.Play();
         }
+        
+    }
+    public void ShootCannon()
+    {
+        CannonParticles.Play();
     }
 }
