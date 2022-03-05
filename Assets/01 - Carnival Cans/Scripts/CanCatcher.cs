@@ -15,7 +15,7 @@ public class CanCatcher : MonoBehaviour
             scoreText.GetComponent<ScoreKeeperCans>().scoreValue += 5;
             scoreText.GetComponent<ScoreKeeperCans>().UpdateScore();
 
-            CannonParticles.Play();
+            ShootCannon();
         }
         
     }
