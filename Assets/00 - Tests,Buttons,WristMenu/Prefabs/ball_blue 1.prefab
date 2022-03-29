@@ -15,9 +15,8 @@ GameObject:
   - component: {fileID: 3068556568424104753}
   - component: {fileID: 3068556568424104758}
   - component: {fileID: -4731674284347419169}
-  - component: {fileID: 8914033214479864698}
   m_Layer: 0
-  m_Name: ball_blue
+  m_Name: ball_blue 1
   m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 45cbbcd7385cb044f9f107bdcdd29036, type: 2}
+  - {fileID: 2100000, guid: f002e32560aac9e4b908b38c4a057fb4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -243,15 +242,3 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!114 &8914033214479864698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2762072307109227470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c197e47bc191d54db74088cce5c2949, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
