@@ -5,10 +5,15 @@ using UnityEngine;
 public class SpawnObjs : MonoBehaviour
 {
     public GameObject golfBall;
+    public GameObject spawner;
     private Vector3 spawnOffset = new Vector3(0,.15f,0);
+    private Vector3 spawnLoc;
 
     public void SpawnBall()
     {
-        Instantiate(golfBall, transform.position + spawnOffset, transform.rotation);
+        spawnLoc = spawner.transform.position;
+
+        //Instantiate(golfBall, transform.position + spawnOffset, transform.rotation);
+        Instantiate(golfBall, spawnLoc, transform.rotation);
     }
 }
