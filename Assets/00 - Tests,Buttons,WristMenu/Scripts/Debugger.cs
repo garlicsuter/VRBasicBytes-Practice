@@ -18,4 +18,19 @@ public class Debugger : MonoBehaviour
     {
         Debug.Log("Exited!");
     }
+
+    public void HandExited()
+    {
+        Debug.Log("Hand Exited!");
+    }
+
+    public void HandHovered()
+    {
+        Debug.Log("Hand Hovered!");
+    }
+
+    public void HandAction()
+    {
+        Debug.Log("HandAction!");
+    }
 }

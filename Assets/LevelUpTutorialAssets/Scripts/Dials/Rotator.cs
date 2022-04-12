@@ -38,6 +38,7 @@ namespace LevelUP.Dial
 
         private void GrabbedBy(SelectEnterEventArgs arg0)
         {
+
             interactor = GetComponent<XRGrabInteractable>().selectingInteractor;
             interactor.GetComponent<XRDirectInteractor>().hideControllerOnSelect = true;
 

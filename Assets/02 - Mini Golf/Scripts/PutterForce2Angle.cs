@@ -8,6 +8,7 @@ public class PutterForce2Angle : MonoBehaviour
     public float power = 10.0F;
     public AudioSource src;
     public float angle = 45;
+    public GameObject scoreText;
 
 
     void OnCollisionEnter(Collision col)
@@ -18,6 +19,7 @@ public class PutterForce2Angle : MonoBehaviour
             Debug.Log("Ball");
             Vector3 explosionPos = transform.position;
             Rigidbody rb = col.gameObject.GetComponent<Rigidbody>();
+            scoreText.GetComponent<ScoreKeeper>().UpdateScore();
 
             //Get angle of club head
             Vector3 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
