@@ -9,6 +9,7 @@ TagManager:
   - Ball
   - GolfClub
   - GolfClubHead
+  - Shapey
   layers:
   - Default
   - TransparentFX

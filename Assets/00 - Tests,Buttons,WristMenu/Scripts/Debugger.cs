@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Debugger : MonoBehaviour
 {
+    public void YouRotatedIt()
+    {
+        Debug.Log("You ROTATED THE DIAL!");
+    }
+
     public void Hovered()
     {
         Debug.Log("Hovered!");
