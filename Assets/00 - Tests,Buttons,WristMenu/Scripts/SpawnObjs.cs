@@ -21,12 +21,12 @@ public class SpawnObjs : MonoBehaviour
 
     public void Update()
     {
-        if (UpButton.isHovered)
-        {
-            //platformLoc.y += 0.5f;
-            platform.transform.Translate(Vector3.up * Time.deltaTime * platformSpeed, Space.World);
-            Debug.Log("Going UP");
-        }
+        //if (UpButton.isHovered)
+        //{
+        //    //platformLoc.y += 0.5f;
+        //    platform.transform.Translate(Vector3.up * Time.deltaTime * platformSpeed, Space.World);
+        //    Debug.Log("Going UP");
+        //}
     }
 
     public void SpawnBall()
