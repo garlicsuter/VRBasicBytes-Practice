@@ -7005,7 +7005,7 @@ GameObject:
   - component: {fileID: 1112282902}
   - component: {fileID: 1112282904}
   - component: {fileID: 1112282903}
-  - component: {fileID: 1112282906}
+  - component: {fileID: 1112282905}
   m_Layer: 0
   m_Name: ScoreText
   m_TagString: Untagged
@@ -7052,7 +7052,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skore:999
+  m_text: 'Skore: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7129,7 +7129,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112282901}
   m_CullTransparentMesh: 1
---- !u!114 &1112282906
+--- !u!114 &1112282905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7138,11 +7138,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1112282901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43b1db99dd0e68d449365dc6b734422b, type: 3}
+  m_Script: {fileID: 11500000, guid: 095c5b061c38099448d949d835523e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1112282901}
-  CannonParticles: {fileID: 199429066}
+  scoreText: {fileID: 1112282903}
+  scoreValue: 0
 --- !u!1 &1119366186
 GameObject:
   m_ObjectHideFlags: 0
