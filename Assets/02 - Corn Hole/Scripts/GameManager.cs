@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
         orangeBag3StartPos = orangeBag1.transform.position;
     }
 
+    
     // Update is called once per frame
     void Update()
     {

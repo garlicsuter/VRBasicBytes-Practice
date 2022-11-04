@@ -9,7 +9,10 @@ TagManager:
   - Ball
   - GolfClub
   - GolfClubHead
-  - Shapey
+  - InHole
+  - Blue
+  - Red
+  - Orange
   layers:
   - Default
   - TransparentFX
