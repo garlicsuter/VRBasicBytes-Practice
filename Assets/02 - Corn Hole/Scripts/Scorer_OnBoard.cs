@@ -4,35 +4,27 @@ using UnityEngine;
 
 public class Scorer_OnBoard : MonoBehaviour
 {
-    private void Start()
-    {
-        Debug.Log("OnBoard Started");
-    }
-    //private void OnCollisionEnter(Collision col)
-    //{
-    //    if (col.gameObject.CompareTag("Blue"))
-    //    {
-    //        Debug.Log("Blue Hit Board");
-    //    }
-
-    //    else if (col.gameObject.CompareTag("Orange"))
-    //    {
-    //        Debug.Log("Orange Hit Board");
-    //    }
-    //}
+    public GameManager gameManager;
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Entered Trigger");
-
         if (other.gameObject.CompareTag("Blue"))
         {
-            Debug.Log("Blue Hit Board");
+            gameManager.blueRoundScoreValue += 1;
+            UpdateScore();
         }
 
         else if (other.gameObject.CompareTag("Orange"))
         {
-            Debug.Log("Orange Hit Board");
+            gameManager.orangeRoundScoreValue += 1;
+            UpdateScore();
         }
+    }
+
+    public void UpdateScore()
+    {
+        //update score
+        gameManager.orangeRoundScoreText.text = gameManager.orangeRoundScoreValue.ToString();
+        gameManager.blueRoundScoreText.text = gameManager.blueRoundScoreValue.ToString();
     }
 }

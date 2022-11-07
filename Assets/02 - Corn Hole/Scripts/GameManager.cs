@@ -5,8 +5,17 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI blueScoreText;
-    public TextMeshProUGUI orangeScoreText;
+    public TextMeshProUGUI orangeRoundScoreText;
+    public TextMeshProUGUI blueRoundScoreText;
+    public TextMeshProUGUI orangeTotalScoreText;
+    public TextMeshProUGUI blueTotalScoreText;
+    public int orangeRoundScoreValue = 0;
+    public int blueRoundScoreValue = 0;
+    public int orangeTotalScoreValue = 0;
+    public int blueTotalScoreValue = 0;
+
+    //public TextMeshProUGUI blueScoreText;
+    //public TextMeshProUGUI orangeScoreText;
     public GameObject SideLeft;
     public GameObject SideRight;
     public GameObject blueBag1;
@@ -24,11 +33,11 @@ public class GameManager : MonoBehaviour
     private Vector3 orangeBag2StartPos;
     private Vector3 orangeBag3StartPos;
 
-    public string side = "sideLeft";
-    private int blueRoundScore = 0;
-    private int orangeRoundScore = 0;
-    private int blueTotalScore = 0;
-    private int orangeTotalScore = 0;
+    //public string side = "sideLeft";
+    //private int blueRoundScore = 0;
+    //private int orangeRoundScore = 0;
+    //private int blueTotalScore = 0;
+    //private int orangeTotalScore = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -53,10 +62,10 @@ public class GameManager : MonoBehaviour
     public void ResetGame()
     {
         XROrigin.transform.position = XROriginPos;
-        blueRoundScore = 0;
-        orangeRoundScore = 0;
-        orangeTotalScore = 0;
-        blueTotalScore = 0;
+        blueRoundScoreValue = 0;
+        orangeRoundScoreValue = 0;
+        orangeTotalScoreValue = 0;
+        blueTotalScoreValue = 0;
         blueBag1.transform.position = blueBag1StartPos;
         blueBag2.transform.position = blueBag2StartPos;
         blueBag3.transform.position = blueBag3StartPos;
@@ -64,5 +73,31 @@ public class GameManager : MonoBehaviour
         orangeBag2.transform.position = orangeBag2StartPos;
         orangeBag3.transform.position = orangeBag3StartPos;
         Debug.Log("Game Reset!");
+    }
+
+    public void CalcRoundScore()
+    {
+        //if orange RndScore > blue RndScore, orange TotalScore += orangeRndScore - blueRndScore
+        // opposite
+        if(orangeRoundScoreValue > blueRoundScoreValue)
+        {
+            orangeTotalScoreValue += orangeRoundScoreValue - blueRoundScoreValue;
+        }
+
+        else if(blueRoundScoreValue > orangeRoundScoreValue)
+        {
+            blueTotalScoreValue += blueRoundScoreValue - orangeRoundScoreValue;
+        }
+
+        
+        orangeTotalScoreText.text = orangeTotalScoreValue.ToString();
+        blueTotalScoreText.text = blueTotalScoreValue.ToString();
+
+        orangeRoundScoreValue = 0;
+        blueRoundScoreValue = 0;
+        orangeRoundScoreText.text = orangeRoundScoreValue.ToString();
+        blueRoundScoreText.text = blueRoundScoreValue.ToString();
+
+        // update Total Score TEXT for both orange and blue
     }
 }
