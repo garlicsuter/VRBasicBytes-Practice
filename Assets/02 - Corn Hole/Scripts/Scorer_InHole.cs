@@ -4,24 +4,60 @@ using UnityEngine;
 
 public class Scorer_InHole : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("Started InHole Scoring");
-    }
+    public GameManager gameManager;
+    private bool isTriggeringBlueHole = false;
+    private bool isTriggeringOrangeHole = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Entered Trigger");
-
         if (other.gameObject.CompareTag("Blue"))
         {
-            Debug.Log("Blue In Hole!");
+            isTriggeringBlueHole = true;
+            //gameManager.blueRoundScoreValue += 3;
+            StartCoroutine(UpdateScore());
         }
 
         else if (other.gameObject.CompareTag("Orange"))
         {
-            Debug.Log("Orange In Hole!");
+            isTriggeringOrangeHole = true;
+            //gameManager.orangeRoundScoreValue += 3;
+            StartCoroutine(UpdateScore());
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Blue"))
+        {
+            isTriggeringBlueHole = false;
+            //gameManager.blueRoundScoreValue += 3;
+            StartCoroutine(UpdateScore());
+        }
+
+        else if (other.gameObject.CompareTag("Orange"))
+        {
+            isTriggeringOrangeHole = false;
+            //gameManager.orangeRoundScoreValue += 3;
+            StartCoroutine(UpdateScore());
+        }
+    }
+
+
+    IEnumerator UpdateScore()
+    {
+        //wait 1 second
+        yield return new WaitForSeconds(1);
+        //update score
+        if (isTriggeringBlueHole)
+        {
+            gameManager.blueRoundScoreValue += 3;
+        }
+
+        else if (isTriggeringOrangeHole)
+        {
+            gameManager.orangeRoundScoreValue += 3;
+        }
+        gameManager.orangeRoundScoreText.text = gameManager.orangeRoundScoreValue.ToString();
+        gameManager.blueRoundScoreText.text = gameManager.blueRoundScoreValue.ToString();
     }
 }
