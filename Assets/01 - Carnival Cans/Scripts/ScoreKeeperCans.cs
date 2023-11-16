@@ -14,6 +14,7 @@ public class ScoreKeeperCans : MonoBehaviour
         scoreText = GetComponent<TextMeshProUGUI>();
     }
 
+    // Update is called once per frame
     public void UpdateScore()
     {
         scoreText.text = "Score: " + scoreValue.ToString();

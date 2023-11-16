@@ -8,12 +8,13 @@ public class SpawnMaters : MonoBehaviour
     public GameObject MaterSpawner;
     public Vector3 materSpawnLoc;
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         materSpawnLoc = MaterSpawner.transform.position;
     }
 
-    public void SpawnMater()
+    public void MaterSpawnerDeluxe()
     {
         Instantiate(Mater, materSpawnLoc, Quaternion.identity);
     }

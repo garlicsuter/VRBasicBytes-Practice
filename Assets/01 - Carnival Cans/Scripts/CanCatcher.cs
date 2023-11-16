@@ -5,11 +5,11 @@ using UnityEngine;
 public class CanCatcher : MonoBehaviour
 {
     public GameObject scoreText;
-    public ParticleSystem CannonParticles;
+    public ParticleSystem confetti;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Can"))
+        if(other.gameObject.CompareTag("Can"))
         {
             Destroy(other.gameObject);
             scoreText.GetComponent<ScoreKeeperCans>().scoreValue += 5;
@@ -17,10 +17,10 @@ public class CanCatcher : MonoBehaviour
 
             ShootCannon();
         }
-        
     }
+
     public void ShootCannon()
     {
-        CannonParticles.Play();
+        confetti.Play();
     }
 }
